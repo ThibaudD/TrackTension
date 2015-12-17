@@ -1,0 +1,14 @@
+.alert {
+  position: absolute;
+  width: 100%;
+  z-index: 5;
+  opacity: 0.8;
+}
+
+#error_explanation {
+  background-color: #f2dede;
+  border-radius: 10px;
+  border: #CC5757 solid 1px;
+  margin-bottom: 5px;
+  color: #CC5757;
+}

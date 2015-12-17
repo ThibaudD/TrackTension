@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Systolic:</strong>
+  <%= @measure.systolic %>
+</p>
+
+<p>
+  <strong>Diastolic:</strong>
+  <%= @measure.diastolic %>
+</p>
+
+<p>
+  <strong>Pulse:</strong>
+  <%= @measure.pulse %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @measure.user %>
+</p>
+
+<%= link_to 'Edit', edit_measure_path(@measure) %> |
+<%= link_to 'Back', measures_path %>

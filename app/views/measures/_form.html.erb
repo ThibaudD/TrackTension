@@ -1,0 +1,31 @@
+<%= form_for(@measure, html: { class: 'form-inline' }) do |f| %>
+  <% if @measure.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@measure.errors.count, "error") %> prohibited this measure from being saved:</h2>
+
+      <ul>
+      <% @measure.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label :systolic, class: "sr-only" %>
+    <%= f.text_field :systolic, class: "form-control", placeholder: :systolic %>
+  </div>
+  <div class="form-group">
+    <%= f.label :diastolic, class: "sr-only" %>
+    <%= f.text_field :diastolic, class: "form-control", placeholder: :diastolic %>
+  </div>
+  <div class="form-group">
+    <%= f.label :pulse, class: "sr-only" %>
+    <%= f.text_field :pulse, class: "form-control", placeholder: :pulse %>
+  </div>
+  <div class="form-group">
+    <div class="">
+      <%= f.submit "Save", class: "btn btn-primary" %>
+    </div>
+  </div>
+<% end %>

@@ -1,0 +1,18 @@
+<div class="nav-head clearfix">
+  <div class="inner">
+    <h3 class="nav-brand">TrackTension</h3>
+    <nav>
+      <ul class="nav">
+        <% if user_signed_in? %>
+          <%= active_link_to t('nav.measures'), measures_path, :wrap_tag => :li %>
+          <%= active_link_to t('nav.edit_account'), edit_user_registration_path, :wrap_tag => :li %>
+          <li><%= link_to t('homeNav.logout'), destroy_user_session_path, method: 'delete' %></li>
+        <% else %>
+          <%= active_link_to t('nav.home'), unauth_root_path, active: :exclusive, :wrap_tag => :li %>
+          <%= active_link_to t('nav.signin'), new_user_session_path, :wrap_tag => :li %>
+          <%= active_link_to t('nav.signup'), new_user_registration_path, :wrap_tag => :li %>
+        <% end %>
+      </ul>
+    </nav>
+  </div>
+</div>

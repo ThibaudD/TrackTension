@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>TrackTension | <%= yield(:title) %></title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <%= flash_messages %>
+  <div class="site-wrapper">
+    <div class="site-wrapper-inner">
+      <div class="cover-container">
+        <%= render 'layouts/navigation' %>
+        <div class="inner cover">
+          <%= yield %>
+        </div>
+        <footer>
+          <div class="inner">
+            <p>Find source code <a href="https://github.com/ThibaudD">here</a>, by <a href="https://github.com/ThibaudD">Thib</a>.</p>
+          </div>
+        </footer>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

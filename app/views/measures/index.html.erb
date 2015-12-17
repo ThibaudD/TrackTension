@@ -1,0 +1,43 @@
+<h1>Listing Measures</h1>
+
+<% if current_user.average_available? %>
+<div class="average">
+  <h4>Average</h4>
+  Systolic: <%= current_user.average_systolic %>
+  Diastolic: <%= current_user.average_diastolic %>
+</div>
+<% end %>
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>
+        Date
+      </th>
+      <th>Systolic</th>
+      <th>Diastolic</th>
+      <th>Pulse</th>
+      <th colspan="1"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @measures.each do |measure| %>
+      <tr>
+        <td><%= I18n.localize measure.created_at, format: :long %></td>
+        <td><%= measure.systolic %></td>
+        <td><%= measure.diastolic %></td>
+        <td><%= measure.pulse %></td>
+        <td>
+          <%= link_to measure, method: :delete, data: { confirm: 'Are you sure?' } do %>
+            <i class="glyphicon glyphicon-remove-circle"></i>
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Measure', new_measure_path, class: "btn btn-default" %>
