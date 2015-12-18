@@ -1,4 +1,4 @@
-worker_processes Integer(ENV['WEB_CONCURRENCY'] || 2)
+worker_processes Integer(ENV['DB_POOL'] || ENV['MAX_THREADS'] || 5)
 timeout 60
 preload_app true
 
