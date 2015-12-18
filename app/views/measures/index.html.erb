@@ -5,8 +5,8 @@
 <% if current_user.average_available? %>
 <div class="average">
   <h4>Average</h4>
-  Systolic: <%= current_user.average_systolic %>
-  Diastolic: <%= current_user.average_diastolic %>
+  Systolic: <%= current_user.average_systolic %> mm Hg
+  Diastolic: <%= current_user.average_diastolic %> mm Hg
 </div>
 <% end %>
 
@@ -16,9 +16,9 @@
       <th>
         Date
       </th>
-      <th>Systolic</th>
-      <th>Diastolic</th>
-      <th>Pulse</th>
+      <th>Systolic (mm Hg)</th>
+      <th>Diastolic (mm Hg)</th>
+      <th>Pulse (BPMs)</th>
       <th colspan="1"></th>
     </tr>
   </thead>

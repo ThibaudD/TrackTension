@@ -1,6 +1,9 @@
 <div class="nav-head clearfix">
   <div class="inner">
-    <h3 class="nav-brand">TrackTension</h3>
+    <h3 class="nav-brand">
+      <%= image_tag 'logo.png', :class => "logo"%>
+      TrackTension
+    </h3>
     <nav>
       <ul class="nav">
         <% if user_signed_in? %>
