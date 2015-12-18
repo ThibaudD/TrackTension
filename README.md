@@ -12,6 +12,27 @@ It is a Rails application with a Postgres database.
 
 How to install
 -------------
+### With Docker
+clone the repository
+```
+git clone git@github.com:ThibaudD/TrackTension.git
+cd TrackTension
+```
+build the docker image and launch the rails app and the Postgres database with docker-compose
+```
+docker-compose build
+docker-compose up
+```
+open a new terminal and create and migrate the database
+```
+docker-compose run web rake db:create
+docker-compose run web rake db:migrate
+```
+Now your application should be working and you could access it on your docker host on the port 3000
+If you want to launch guard
+```
+docker-compose run web guard --force-polling
+```
 
 
 ----------
