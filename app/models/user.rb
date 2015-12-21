@@ -4,6 +4,7 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
+  has_many :measure_periods, dependent: :destroy
   has_many :measures, dependent: :destroy
 
   MEASURE_SUBNISSIONS_NEEDED = 3

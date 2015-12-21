@@ -23,9 +23,9 @@ default: &default
 
 development: &development
   <<: *default
-  username: postgres
-  password:
-  host: db
+  # username: postgres
+  # password:
+  # host: db
   database: TrackTension_development
 
   # The specified database role being used to connect to postgres.

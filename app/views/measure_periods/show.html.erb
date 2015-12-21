@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Starting day:</strong>
+  <%= @measure_period.starting_day %>
+</p>
+
+<p>
+  <strong>Number of days:</strong>
+  <%= @measure_period.number_of_days %>
+</p>
+
+<%= link_to 'Edit', edit_measure_period_path(@measure_period) %> |
+<%= link_to 'Back', measure_periods_path %>

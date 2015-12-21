@@ -1,0 +1,36 @@
+<% provide(:title, "Measure periods") %>
+
+<h1>Listing Measure Periods</h1>
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>Starting day</th>
+      <th>Number of days</th>
+      <th colspan="2"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @measure_periods.each do |measure_period| %>
+      <tr>
+        <td><%= I18n.localize measure_period.starting_day, format: :long %></td>
+        <td><%= measure_period.number_of_days %></td>
+        <td>
+          <%= link_to measure_period, method: :get do %>
+            Show <i class="glyphicon glyphicon-menu-right"></i>
+          <% end %>
+        </td>
+        <td>
+          <%= link_to measure_period, method: :delete, data: { confirm: 'Are you sure?' }, class: "delete-link" do %>
+            <i class="glyphicon glyphicon-remove-circle"></i>
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Measure period', new_measure_period_path, class: "btn btn-default" %>

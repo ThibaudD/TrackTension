@@ -7,6 +7,7 @@
     <nav>
       <ul class="nav">
         <% if user_signed_in? %>
+          <%= active_link_to t('nav.measure_periods'), measure_periods_path, :wrap_tag => :li %>
           <%= active_link_to t('nav.measures'), measures_path, :wrap_tag => :li %>
           <%= active_link_to t('nav.edit_account'), edit_user_registration_path, :wrap_tag => :li %>
           <li><%= link_to t('homeNav.logout'), destroy_user_session_path, method: 'delete' %></li>

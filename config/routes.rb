@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :measure_periods
   devise_for :users
 
   resources :measures, except: [:show, :update, :edit]

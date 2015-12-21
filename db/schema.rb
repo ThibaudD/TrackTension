@@ -11,10 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151214202049) do
+ActiveRecord::Schema.define(version: 20151218093923) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "measure_periods", force: :cascade do |t|
+    t.date     "starting_day"
+    t.integer  "number_of_days"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.integer  "user_id"
+  end
+
+  add_index "measure_periods", ["user_id"], name: "index_measure_periods_on_user_id", using: :btree
 
   create_table "measures", force: :cascade do |t|
     t.float    "systolic"
@@ -46,5 +56,6 @@ ActiveRecord::Schema.define(version: 20151214202049) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
+  add_foreign_key "measure_periods", "users"
   add_foreign_key "measures", "users"
 end

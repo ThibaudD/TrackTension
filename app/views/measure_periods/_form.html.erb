@@ -1,0 +1,26 @@
+<%= form_for(@measure_period, html: { class: 'form-horizontal' }) do |f| %>
+  <% if @measure_period.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@measure_period.errors.count, "error") %> prohibited this measure_period from being saved:</h2>
+
+      <ul>
+      <% @measure_period.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label :starting_day %><br>
+    <%= f.date_select :starting_day %>
+  </div>
+  <div class="form-group col-sm-12">
+    <%= f.label :number_of_days %>
+    <% days_array = (3..7).to_a.map { |day| ["#{day} days", day] } %>
+    <%= f.select :number_of_days, options_for_select(days_array) %>
+  </div>
+  <div class="form-group">
+    <%= f.submit "Save", class: "btn btn-primary" %>
+  </div>
+<% end %>
